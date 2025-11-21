@@ -1,13 +1,45 @@
 import numpy as np
-data = np.loadtxt("loop4.csv", delimiter=",", dtype=str, encoding = 'utf8')
 def num_letters(num_rows,num_columns):
     return((num_rows + num_rows) + (num_columns + num_columns) - 4)
-
-
-    
-assert num_letters(3,4) == 10  #3 is the num_rows and 4 is the num_columns
-assert num_letters(2,4) == 8
-assert num_letters(1,5) == 8
-assert num_letters(4,2) == 8
-assert num_letters(3,1) == 4
-print("assertions checked.")
+data = np.loadtxt("loop4.csv", delimiter=",", dtype=str, encoding = 'utf8')
+ls = []
+rows,columns = data.shape
+c1=0
+c2=0
+r1=1
+r2=1
+while c1 < columns:
+    ls.append(str(data[0,c1]))
+    c1 += c1
+while c2 < columns:
+    ls.append(str(data[5,c2]))
+    c2 += c2
+while r1 < rows-1:
+    ls.append(str(data[r1,0]))
+    r1 += r1
+while r1 < rows-1:
+    ls.append(str(data[r2,6]))
+    r2 += r2
+print(ls)
+assert len(words) == num_letters(rows, columns)
+words = [] 
+rows, columns = data.shape  
+c1=0
+c2=0
+r1=1
+r2=1
+while c1 < columns-1:
+    words.append(str(data[0,c1])+str(data[0,c1+1]))
+    c1 += 1
+while c2 < columns-1:
+    words.append(str(data[5,c2])+str(data[5,c2+1]))
+    c2 += 1
+while r1 < rows-2:
+    words.append(str(data[r1,0])+str(data[r1+1,0]))
+    r1 += 1
+while r2 < rows-2:
+    words.append(str(data[r2,6])+str(data[r2+1,6]))
+    r2 += 1
+print(words)
+assert len(words) == num_letters(rows, columns)
+print('assertment done')
