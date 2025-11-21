@@ -1,0 +1,74 @@
+Project Rules
+
+This project, like the others, is to be done in class (unless you are absent). However, it is a little different because I would like every student to turn in their own GitHub link and write their own python code. However, please talk with your classmate(s) as you do the work - collaboration is encouraged.
+
+In this project, the goal is to collect words of two characters by walking around an Excel file of letters and grabbing every possible word, similar to what was done in the homework. 
+
+For example, suppose you have this sequence: 
+
+ABCD
+
+The possible 'words' of two letters are AB, BC, CD if you go from left to right. These aren't real words in English, but we'll still count them as words. For the purposes of this project, we will only walk in one direction. 
+
+Your program must print out all words that are possible based on a given .csv file. There are different csv files because I want to make sure that your program can handle any number of rows and any number of columns. In other words, the program should not be specific to any particular configuration. However, your program will only read in one of them (choose any one you want); the others are there for you to check to make sure your program works for any of them. 
+
+Some files will have duplicate letters, so you might have duplicate words. That's fine; don't delete the duplicates. 
+
+The purpose of this assignment is to get practice with numpy arrays, so you must use the numpy array methods we learned in class to receive credit for this project. 
+
+PART 0)
+
+Create a sub-folder called project3 in your my-python folder. Download these 4 data files into it. 
+
+Open up these files in Excel or Numbers to see how they look:
+
+loop4.csvDownload loop4.csv
+
+loop3.csvDownload loop3.csv
+
+loop2.csvDownload loop2.csv
+
+loop1.csvDownload loop1.csv
+
+I suggest opening at least one of them in Notepad or Notes to see how commas are used to separate the values.
+
+PART 1) Start a new python file in IDLE called words.py.  At the top, write a function called
+
+num_letters
+that calculates how many letters there are in a given file based on two input parameters: num_rows and num_columns. 
+
+Check that your function is correct by putting assert statements under the function definition. Here is one to get you started: 
+
+assert num_letters(3, 4) == 10  #3 is the num_rows and 4 is the num_columns
+print("Checking assertions.")
+Put 4 additional asserts in your code, using the results of this week's homework assignment. If the function is working correctly, your print statement should print without any errors. If your assert statement throws an error, it means num_letters() isn't constructed correctly (assuming your answers to the homework are correct). 
+PART 2) Initialize your project3 folder with git and connect it to new GitHub repo called WordList. Do the usual process (see instructions on Canvas Home page) to push your files to your remote repo. 
+
+PART 3) We are going to start with an easier task then extracting all possible words. For now, we will just extract all possible letters. Here is some code to get you started: 
+
+import numpy as np
+data = np.loadtxt("loop4.csv", delimiter=",", dtype=str, encoding = 'utf8')
+words = [] #this will store the letters we extract from the data file
+rows, columns = data.shape  #this gives you the number of rows and number of columns in the data file
+#collect all letters - fill in your code here
+...
+print(words) #check that you collected all the letters in your data file
+
+assert len(words) == num_letters(rows, columns) 
+
+  #this should not throw an error. If it does, most likely your main code is not getting the correct number of letters
+Check that your code works without errors and prints out the correct lists of letters for all 4 data files. 
+
+PART 4) Assuming you have time in class, please also do this part.
+
+Without deleting your part 3, duplicate your code and modify it so that you are putting words (of 2 characters) in the list instead of individual letters. 
+
+Here is what the answer should look like for loop #4: ['ab', 'bc', 'ca', 'ab', 'bc', 'cd', 'ij', 'jk', 'ki', 'ij', 'jk', 'kl', 'de', 'ef', 'fg', 'gh', 'hi', 'lm', 'mn', 'no', 'op', 'pa']
+
+Check that your code works without errors and prints out the correct list of words for all 4 data files. 
+
+WHAT TO TURN IN 
+
+Each student should turn in their own GitHub link (don't share!) However, you are encouraged to collaborate while doing the project, so I won't mind if your code is the same as your partner's. 
+
+Your GitHub repo should contain the 4 data files as well as your python file. To get full credit, you need to at least finish through part 3.
