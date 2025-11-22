@@ -21,7 +21,7 @@ while r1 < rows-1:
     ls.append(str(data[r2,6]))
     r2 += r2
 print(ls)
-assert len(words) == num_letters(rows, columns)
+assert len(ls) == num_letters(rows, columns)
 words = [] 
 rows, columns = data.shape  
 c1=0
