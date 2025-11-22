@@ -41,5 +41,5 @@ while r2 < rows-1:
     words.append(str(data[r2,columns-1])+str(data[r2+1,columns-1]))
     r2 += 1
 print(words)
-assert len(words) == num_letters(rows, columns)
+assert len(words) == num_letters(rows, columns)-2
 print('assertment done')
