@@ -14,10 +14,10 @@ while c1 < columns:
 while c2 < columns:
     ls.append(str(data[rows-1, c2]))
     c2 += 1
-while r1 < rows-2:
+while r1 < rows-1:
     ls.append(str(data[r1,0]))
     r1 += 1
-while r2 < rows-2:
+while r2 < rows-1:
     ls.append(str(data[r2,columns -1]))
     r2 += 1
 print(ls)
