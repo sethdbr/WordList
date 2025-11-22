@@ -10,16 +10,16 @@ r1=1
 r2=1
 while c1 < columns:
     ls.append(str(data[0,c1]))
-    c1 += c1
+    c1 += 1
 while c2 < columns:
     ls.append(str(data[5,c2]))
-    c2 += c2
+    c2 += 1
 while r1 < rows-1:
     ls.append(str(data[r1,0]))
-    r1 += r1
-while r1 < rows-1:
+    r1 += 1
+while r2 < rows-1:
     ls.append(str(data[r2,6]))
-    r2 += r2
+    r2 += 1
 print(ls)
 assert len(ls) == num_letters(rows, columns)
 words = [] 
