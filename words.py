@@ -12,13 +12,13 @@ while c1 < columns:
     ls.append(str(data[0,c1]))
     c1 += 1
 while c2 < columns:
-    ls.append(str(data[5,c2]))
+    ls.append(str(data[rows-1, c2]))
     c2 += 1
-while r1 < rows-1:
+while r1 < rows-2:
     ls.append(str(data[r1,0]))
     r1 += 1
-while r2 < rows-1:
-    ls.append(str(data[r2,6]))
+while r2 < rows-2:
+    ls.append(str(data[r2,columns -1]))
     r2 += 1
 print(ls)
 assert len(ls) == num_letters(rows, columns)
@@ -32,13 +32,13 @@ while c1 < columns-1:
     words.append(str(data[0,c1])+str(data[0,c1+1]))
     c1 += 1
 while c2 < columns-1:
-    words.append(str(data[5,c2])+str(data[5,c2+1]))
+    words.append(str(data[rows-1,c2])+str(data[rows-1,c2+1]))
     c2 += 1
 while r1 < rows-2:
     words.append(str(data[r1,0])+str(data[r1+1,0]))
     r1 += 1
 while r2 < rows-2:
-    words.append(str(data[r2,6])+str(data[r2+1,6]))
+    words.append(str(data[r2,columns-1])+str(data[r2+1,columns-1]))
     r2 += 1
 print(words)
 assert len(words) == num_letters(rows, columns)
