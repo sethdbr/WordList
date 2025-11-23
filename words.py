@@ -12,17 +12,27 @@ while c1 < columns:
     ls.append(str(data[0,c1]))
     c1 += 1
 while c2 < columns:
+<<<<<<< HEAD
     ls.append(str(data[rows-1,c2]))
+=======
+    ls.append(str(data[rows-1, c2]))
+>>>>>>> 7b2ff855fc244590e292b6c5d7a2b7144e0be4a8
     c2 += 1
 while r1 < rows-1:
     ls.append(str(data[r1,0]))
     r1 += 1
 while r2 < rows-1:
+<<<<<<< HEAD
     ls.append(str(data[r2,columns-1]))
     r2 += 1
 print(ls)
 print(len(ls))
 print(num_letters(rows,columns))
+=======
+    ls.append(str(data[r2,columns -1]))
+    r2 += 1
+print(ls)
+>>>>>>> 7b2ff855fc244590e292b6c5d7a2b7144e0be4a8
 assert len(ls) == num_letters(rows, columns)
 words = [] 
 rows, columns = data.shape  
@@ -43,7 +53,11 @@ while r2 < rows-1:
     words.append(str(data[r2,columns-1])+str(data[r2+1,columns-1]))
     r2 += 1
 print(words)
+<<<<<<< HEAD
 print(len(words))
 print(num_letters(rows,columns))
 assert len(words) == num_letters(rows, columns)
+=======
+assert len(words) == num_letters(rows, columns)-2
+>>>>>>> 7b2ff855fc244590e292b6c5d7a2b7144e0be4a8
 print('assertment done')
